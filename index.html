@@ -8,16 +8,14 @@
     </head>
     <body>
         <div id="vue-app">
-           <div id="bag">
-
-           </div>
+           <div id="bag":class="{burst: ended}"></div>
 
             <div id="bag-health">
-                <div></div>
+                <div :style="{width: health + '%'}"></div>
             </div>
 
             <div id="controls">
-                <button @click="punch()">Punch the bag</button>
+                <button v-show="!ended" @click="punch()">Punch the bag</button>
                 <button @click="restrt()">Restart game</button>
             </div>
         </div>
